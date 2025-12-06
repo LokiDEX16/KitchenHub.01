@@ -5,6 +5,7 @@ import RestaurantGrid from "@/components/RestaurantGrid";
 import DeliveryHero from "@/components/DeliveryHero";
 import FeaturesSection from "@/components/FeaturesSection";
 import AnnouncementSection from "@/components/AnnouncementSection";
+import CustomerReviews from "@/components/CustomerReviews";
 import GallerySection from "@/components/GallerySection";
 import CareersSection from "@/components/CareersSection";
 import ContactSection from "@/components/ContactSection";
@@ -20,6 +21,7 @@ const Index = () => {
       <DeliveryHero />
       <FeaturesSection />
       <AnnouncementSection />
+      <CustomerReviews />
       <GallerySection />
       <CareersSection />
       <ContactSection />

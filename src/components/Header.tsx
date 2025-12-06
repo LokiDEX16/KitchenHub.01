@@ -19,6 +19,7 @@ const Header = () => {
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
             <img src={kitchenHubLogo} alt='Kitchen Hub Logo' className='h-14 w-auto' />
+            <span className="font-display text-2xl font-bold text-secondary animate-fade-in-delay">Kitchen Hub</span>
           </a>
 
           {/* Desktop Navigation */}
