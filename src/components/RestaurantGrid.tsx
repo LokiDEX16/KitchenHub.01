@@ -8,20 +8,20 @@ import lunchImg from "@/assets/restaurant-lunch.jpg";
 import wingsImg from "@/assets/restaurant-wings.jpg";
 
 const atlanticCityRestaurants = [
-  { name: "Indiyas", tagline: "Authentic Indian Cuisine", image: indiyasImg },
+  { name: "Indiyas", tagline: "Curry It Your Way", image: indiyasImg },
   { name: "Dosa24", tagline: "South Indian Delights 24/7", image: dosaImg },
   { name: "Vegan15", tagline: "Plant-Based Perfection", image: veganImg },
-  { name: "Bobakafe", tagline: "Bubble Tea & More", image: bobaImg },
+  { name: "BobaKafe", tagline: "Bubble Tea & More", image: bobaImg },
 ];
 
 const tomsRiverRestaurants = [
-  { name: "Indiyas", tagline: "Authentic Indian Cuisine", image: indiyasImg },
+  { name: "Indiyas", tagline: "Curry It Your Way", image: indiyasImg },
   { name: "Halal Kitch", tagline: "Halal Middle Eastern Fare", image: halalImg },
   { name: "Vegan15", tagline: "Plant-Based Perfection", image: veganImg },
   { name: "Dosa24", tagline: "South Indian Delights 24/7", image: dosaImg },
   { name: "Lunch Street", tagline: "Quick Bites & Sandwiches", image: lunchImg },
   { name: "WingsBowl", tagline: "Wings Done Right", image: wingsImg },
-  { name: "Bobakafe", tagline: "Bubble Tea & More", image: bobaImg },
+  { name: "BobaKafe", tagline: "Bubble Tea & More", image: bobaImg },
 ];
 
 const RestaurantGrid = () => {
@@ -32,7 +32,7 @@ const RestaurantGrid = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <p className="text-primary font-semibold uppercase tracking-widest mb-2">Location 1</p>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground">
               ATLANTIC CITY, NJ
             </h2>
           </div>
@@ -53,7 +53,7 @@ const RestaurantGrid = () => {
         <div>
           <div className="text-center mb-12">
             <p className="text-primary font-semibold uppercase tracking-widest mb-2">Location 2</p>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground">
               TOMS RIVER, NJ
             </h2>
           </div>

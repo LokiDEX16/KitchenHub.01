@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Anton', 'sans-serif'],
+        display: ['Poppins', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
       },
       colors: {
@@ -51,6 +51,8 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        cream: "hsl(36 60% 88%)",
+        warmBlack: "hsl(0 0% 0%)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -83,8 +85,8 @@ export default {
           "50%": { transform: "translateY(-5px)" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(45 100% 58% / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(45 100% 58% / 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(36 78% 59% / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(36 78% 59% / 0.6)" },
         },
       },
       animation: {
