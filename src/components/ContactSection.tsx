@@ -27,18 +27,18 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-card">
+    <section id="contact" className="section-padding bg-muted">
       <div className="container-custom px-4">
         <div className="text-center mb-16">
           <p className="text-primary font-semibold uppercase tracking-widest mb-2">Get In Touch</p>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground">
-            Contact Us
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl">
+            CONTACT US
           </h2>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact Form */}
-          <div className="bg-muted rounded-2xl p-8 card-shadow border border-border">
+          <div className="bg-card rounded-2xl p-8 card-shadow">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input
@@ -47,7 +47,6 @@ const ContactSection = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="bg-card"
                 />
               </div>
               <div>
@@ -58,7 +57,6 @@ const ContactSection = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="bg-card"
                 />
               </div>
               <div>
@@ -68,7 +66,6 @@ const ContactSection = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="bg-card"
                 />
               </div>
               <div>
@@ -78,7 +75,6 @@ const ContactSection = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="bg-card"
                 />
               </div>
               <Button type="submit" variant="hero" size="lg" className="w-full">
@@ -95,7 +91,7 @@ const ContactSection = () => {
                 <Clock size={24} className="text-primary-foreground" />
               </div>
               <div>
-                <h3 className="font-display text-xl mb-2 text-foreground">We're Open</h3>
+                <h3 className="font-display text-xl mb-2">WE'RE OPEN</h3>
                 <p className="text-muted-foreground">Mon - Sun: 10:00 AM - 10:00 PM</p>
                 <p className="text-muted-foreground">Delivery until 9:30 PM</p>
               </div>
@@ -107,7 +103,7 @@ const ContactSection = () => {
                 <MapPin size={24} className="text-primary-foreground" />
               </div>
               <div>
-                <h3 className="font-display text-xl mb-2 text-foreground">Atlantic City, NJ</h3>
+                <h3 className="font-display text-xl mb-2">ATLANTIC CITY, NJ</h3>
                 <p className="text-muted-foreground">123 Boardwalk Avenue</p>
                 <p className="text-muted-foreground">Atlantic City, NJ 08401</p>
               </div>
@@ -119,7 +115,7 @@ const ContactSection = () => {
                 <MapPin size={24} className="text-primary-foreground" />
               </div>
               <div>
-                <h3 className="font-display text-xl mb-2 text-foreground">Toms River, NJ</h3>
+                <h3 className="font-display text-xl mb-2">TOMS RIVER, NJ</h3>
                 <p className="text-muted-foreground">456 Main Street</p>
                 <p className="text-muted-foreground">Toms River, NJ 08753</p>
               </div>
@@ -131,7 +127,7 @@ const ContactSection = () => {
                 <Phone size={24} className="text-primary-foreground" />
               </div>
               <div>
-                <h3 className="font-display text-xl mb-2 text-foreground">Call Us</h3>
+                <h3 className="font-display text-xl mb-2">CALL US</h3>
                 <p className="text-muted-foreground">(555) 123-4567</p>
                 <p className="text-muted-foreground">support@kitchenhub.com</p>
               </div>

@@ -15,13 +15,13 @@ const galleryImages = [
 
 const GallerySection = () => {
   return (
-    <section className="section-padding bg-muted overflow-hidden">
+    <section className="section-padding bg-background overflow-hidden">
       <div className="container-custom px-4 mb-12">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
           <div>
             <p className="text-primary font-semibold uppercase tracking-widest mb-2">Food Gallery</p>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground">
-              We Deliver <span className="text-primary">Happiness</span>
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl">
+              WE DELIVER
             </h2>
             <p className="text-muted-foreground mt-2 max-w-md">
               Satisfying your cravings just got easier. Browse our mouthwatering selection.
@@ -39,7 +39,7 @@ const GallerySection = () => {
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-72 sm:w-80 lg:w-96 aspect-square rounded-2xl overflow-hidden card-shadow group border border-border"
+              className="flex-shrink-0 w-72 sm:w-80 lg:w-96 aspect-square rounded-2xl overflow-hidden card-shadow group"
             >
               <img
                 src={image.src}
@@ -51,8 +51,8 @@ const GallerySection = () => {
         </div>
 
         {/* Gradient Overlays */}
-        <div className="absolute top-0 left-0 bottom-4 w-8 bg-gradient-to-r from-muted to-transparent pointer-events-none" />
-        <div className="absolute top-0 right-0 bottom-4 w-8 bg-gradient-to-l from-muted to-transparent pointer-events-none" />
+        <div className="absolute top-0 left-0 bottom-4 w-8 bg-gradient-to-r from-background to-transparent pointer-events-none" />
+        <div className="absolute top-0 right-0 bottom-4 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none" />
       </div>
     </section>
   );
