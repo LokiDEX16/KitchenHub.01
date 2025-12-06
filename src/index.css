@@ -75,9 +75,7 @@
     --border: 0 0% 20%;
     --input: 0 0% 20%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
@@ -90,9 +88,7 @@
     font-family: var(--font-display);
     letter-spacing: 0.02em;
   }
-}
 
-@layer utilities {
   .font-display {
     font-family: var(--font-display);
   }
@@ -120,9 +116,7 @@
   .glow-yellow {
     box-shadow: var(--glow-yellow);
   }
-}
 
-@layer components {
   .section-padding {
     @apply px-4 sm:px-6 lg:px-8 py-16 lg:py-24;
   }
@@ -130,19 +124,19 @@
   .container-custom {
     @apply max-w-7xl mx-auto;
   }
-}
 
-/* Custom scrollbar for gallery */
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+  /* Custom scrollbar for gallery */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
 }
