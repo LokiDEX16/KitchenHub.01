@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* Kitchen Hub Brand Colors */
-    --background: 0 0% 100%;
+    /* Kitchen Hub Brand Colors - Warm & Welcoming */
+    --background: 36 60% 96%;
     --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
@@ -16,37 +16,39 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    /* Yellow Primary */
-    --primary: 45 100% 58%;
+    /* Warm Orange Primary - sampled from logo */
+    --primary: 36 78% 59%;
     --primary-foreground: 0 0% 0%;
 
-    /* Dark Secondary */
-    --secondary: 0 0% 7%;
+    /* Deep Black Secondary */
+    --secondary: 0 0% 0%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 45 20% 95%;
-    --muted-foreground: 0 0% 40%;
+    /* Cream/Beige Muted */
+    --muted: 36 50% 94%;
+    --muted-foreground: 0 0% 35%;
 
-    --accent: 45 100% 65%;
+    /* Accent - lighter warm tone */
+    --accent: 36 60% 88%;
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 45 100% 58%;
+    --border: 36 30% 85%;
+    --input: 36 30% 85%;
+    --ring: 36 78% 59%;
 
     --radius: 0.75rem;
 
     /* Custom Kitchen Hub tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(0 0% 15%) 100%);
-    --card-shadow: 0 4px 20px -4px hsl(0 0% 0% / 0.15);
-    --card-shadow-hover: 0 8px 30px -4px hsl(0 0% 0% / 0.25);
-    --glow-yellow: 0 0 40px hsl(45 100% 58% / 0.4);
+    --hero-gradient: linear-gradient(135deg, hsl(36 78% 59%) 0%, hsl(36 90% 65%) 100%);
+    --card-shadow: 0 4px 20px -4px hsl(0 0% 0% / 0.1);
+    --card-shadow-hover: 0 8px 30px -4px hsl(0 0% 0% / 0.2);
+    --glow-primary: 0 0 40px hsl(36 78% 59% / 0.4);
 
     /* Typography */
-    --font-display: 'Anton', sans-serif;
+    --font-display: 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
   }
 
@@ -60,7 +62,7 @@
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 45 100% 58%;
+    --primary: 36 78% 59%;
     --primary-foreground: 0 0% 0%;
 
     --secondary: 0 0% 15%;
@@ -69,7 +71,7 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 45 100% 50%;
+    --accent: 36 60% 50%;
     --accent-foreground: 0 0% 0%;
 
     --border: 0 0% 20%;
@@ -88,7 +90,8 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    letter-spacing: 0.02em;
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 }
 
@@ -117,8 +120,8 @@
     box-shadow: var(--card-shadow-hover);
   }
 
-  .glow-yellow {
-    box-shadow: var(--glow-yellow);
+  .glow-primary {
+    box-shadow: var(--glow-primary);
   }
 }
 
