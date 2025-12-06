@@ -32,12 +32,6 @@ const DeliveryHero = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-secondary/50 to-transparent" />
             </div>
-            
-            {/* Floating Badge */}
-            <div className="absolute -bottom-4 -left-4 lg:-left-8 bg-primary rounded-xl p-4 card-shadow animate-bounce-subtle">
-              <p className="font-display text-2xl text-primary-foreground">$0</p>
-              <p className="text-xs text-primary-foreground/80 uppercase tracking-wide">Extra Fees</p>
-            </div>
           </div>
         </div>
       </div>

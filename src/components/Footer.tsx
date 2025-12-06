@@ -1,3 +1,5 @@
+import logo from "@/assets/kitchen-hub-logo.png";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -7,9 +9,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="font-display text-xl text-primary-foreground">K</span>
-            </div>
+            <img src={logo} alt="Kitchen Hub Logo" className="w-10 h-10" />
             <span className="font-display text-xl text-secondary-foreground tracking-wider">KITCHEN HUB</span>
           </div>
 

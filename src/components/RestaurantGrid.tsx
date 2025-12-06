@@ -26,22 +26,24 @@ const tomsRiverRestaurants = [
 
 const RestaurantGrid = () => {
   return (
-    <section id="locations" className="section-padding bg-muted">
+    <section id="locations" className="py-20 bg-accent">
       <div className="container-custom">
         {/* Atlantic City Section */}
         <div className="mb-20">
-          <div className="text-center mb-12">
-            <p className="text-primary font-semibold uppercase tracking-widest mb-2">Location 1</p>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl">
+          <div className="text-center mb-16">
+            <p className="text-primary font-body font-semibold uppercase tracking-widest mb-2">Location 1</p>
+            <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl text-secondary">
               ATLANTIC CITY, NJ
             </h2>
+            <p className="text-muted-foreground mt-4">123 Boardwalk Avenue</p>
+            <p className="text-muted-foreground">Atlantic City, NJ 08401</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {atlanticCityRestaurants.map((restaurant, index) => (
               <div
                 key={`ac-${index}`}
                 className="animate-fade-up opacity-0"
-                style={{ animationDelay: `${index * 0.1}s`, animationFillMode: "forwards" }}
+                style={{ animationDelay: `${index * 0.15}s`, animationFillMode: "forwards" }}
               >
                 <RestaurantCard {...restaurant} />
               </div>
@@ -51,18 +53,20 @@ const RestaurantGrid = () => {
 
         {/* Toms River Section */}
         <div>
-          <div className="text-center mb-12">
-            <p className="text-primary font-semibold uppercase tracking-widest mb-2">Location 2</p>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl">
+          <div className="text-center mb-16">
+            <p className="text-primary font-body font-semibold uppercase tracking-widest mb-2">Location 2</p>
+            <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl text-secondary">
               TOMS RIVER, NJ
             </h2>
+            <p className="text-muted-foreground mt-4">456 Main Street</p>
+            <p className="text-muted-foreground">Toms River, NJ 08753</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {tomsRiverRestaurants.map((restaurant, index) => (
               <div
                 key={`tr-${index}`}
                 className="animate-fade-up opacity-0"
-                style={{ animationDelay: `${index * 0.1}s`, animationFillMode: "forwards" }}
+                style={{ animationDelay: `${index * 0.15}s`, animationFillMode: "forwards" }}
               >
                 <RestaurantCard {...restaurant} />
               </div>
