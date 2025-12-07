@@ -1,4 +1,7 @@
+import { useState } from "react";
 import RestaurantCard from "@/components/RestaurantCard";
+import MenuPopup from "@/components/MenuPopup";
+import { menus } from "@/data/menus";
 import indiyasImg from "@/assets/restaurant-indiyas.jpg";
 import dosaImg from "@/assets/restaurant-dosa.jpg";
 import veganImg from "@/assets/restaurant-vegan.jpg";
@@ -8,23 +11,33 @@ import lunchImg from "@/assets/restaurant-lunch.jpg";
 import wingsImg from "@/assets/restaurant-wings.jpg";
 
 const atlanticCityRestaurants = [
-  { name: "Indiyas", tagline: "Authentic Indian Cuisine", image: indiyasImg },
-  { name: "Dosa24", tagline: "South Indian Delights 24/7", image: dosaImg },
-  { name: "Vegan15", tagline: "Plant-Based Perfection", image: veganImg },
-  { name: "Bobakafe", tagline: "Bubble Tea & More", image: bobaImg },
+  { name: "Indiyas", menuKey: "Indiyas", tagline: "Authentic Indian Cuisine", image: indiyasImg },
+  { name: "Dosa24", menuKey: "Dosa24", tagline: "South Indian Delights 24/7", image: dosaImg },
+  { name: "Vegan15", menuKey: "Vegan15", tagline: "Plant-Based Perfection", image: veganImg },
+  { name: "Bobakafe", menuKey: "BobaKafe", tagline: "Bubble Tea & More", image: bobaImg },
 ];
 
 const tomsRiverRestaurants = [
-  { name: "Indiyas", tagline: "Authentic Indian Cuisine", image: indiyasImg },
-  { name: "Halal Kitch", tagline: "Halal Middle Eastern Fare", image: halalImg },
-  { name: "Vegan15", tagline: "Plant-Based Perfection", image: veganImg },
-  { name: "Dosa24", tagline: "South Indian Delights 24/7", image: dosaImg },
-  { name: "Lunch Street", tagline: "Quick Bites & Sandwiches", image: lunchImg },
-  { name: "WingsBowl", tagline: "Wings Done Right", image: wingsImg },
-  { name: "Bobakafe", tagline: "Bubble Tea & More", image: bobaImg },
+  { name: "Indiyas", menuKey: "Indiyas", tagline: "Authentic Indian Cuisine", image: indiyasImg },
+  { name: "Halal Kitch", menuKey: "HalalKitch", tagline: "Halal Middle Eastern Fare", image: halalImg },
+  { name: "Vegan15", menuKey: "Vegan15", tagline: "Plant-Based Perfection", image: veganImg },
+  { name: "Dosa24", menuKey: "Dosa24", tagline: "South Indian Delights 24/7", image: dosaImg },
+  { name: "Lunch Street", menuKey: "LunchStreet", tagline: "Quick Bites & Sandwiches", image: lunchImg },
+  { name: "WingsBowl", menuKey: "WingsBowl", tagline: "Wings Done Right", image: wingsImg },
+  { name: "Bobakafe", menuKey: "BobaKafe", tagline: "Bubble Tea & More", image: bobaImg },
 ];
 
 const RestaurantGrid = () => {
+  const [selectedMenu, setSelectedMenu] = useState(null);
+
+  const openPopup = (restaurant) => {
+    setSelectedMenu(menus[restaurant.menuKey]);
+  };
+
+  const closePopup = () => {
+    setSelectedMenu(null);
+  };
+
   return (
     <section id="locations" className="py-20 bg-accent">
       <div className="container-custom">
@@ -42,8 +55,9 @@ const RestaurantGrid = () => {
             {atlanticCityRestaurants.map((restaurant, index) => (
               <div
                 key={`ac-${index}`}
-                className="animate-fade-up opacity-0"
+                className="animate-fade-up opacity-0 cursor-pointer"
                 style={{ animationDelay: `${index * 0.15}s`, animationFillMode: "forwards" }}
+                onClick={() => openPopup(restaurant)}
               >
                 <RestaurantCard {...restaurant} />
               </div>
@@ -65,8 +79,9 @@ const RestaurantGrid = () => {
             {tomsRiverRestaurants.map((restaurant, index) => (
               <div
                 key={`tr-${index}`}
-                className="animate-fade-up opacity-0"
+                className="animate-fade-up opacity-0 cursor-pointer"
                 style={{ animationDelay: `${index * 0.15}s`, animationFillMode: "forwards" }}
+                onClick={() => openPopup(restaurant)}
               >
                 <RestaurantCard {...restaurant} />
               </div>
@@ -74,6 +89,7 @@ const RestaurantGrid = () => {
           </div>
         </div>
       </div>
+      {selectedMenu && <MenuPopup menu={selectedMenu} onClose={closePopup} />}
     </section>
   );
 };
