@@ -18,6 +18,7 @@ type RestaurantMeta = {
   location: string;
   hours: string;
   highlight: string;
+  displayName?: string;
 };
 
 const restaurantImages: Record<string, string> = {
@@ -35,36 +36,43 @@ const restaurantMeta: Record<string, RestaurantMeta> = {
     location: "Atlantic City",
     hours: "Daily · 10am – 10pm",
     highlight: "Spiced curries and sizzling tandoor favorites",
+    displayName: "Indiyas Veg",
   },
   Dosa24: {
     location: "Toms River",
     hours: "Daily · 8am – 11pm",
     highlight: "Crispy dosas and hearty South Indian staples",
+    displayName: "Dosa 24",
   },
   Vegan15: {
     location: "Atlantic City",
     hours: "Wed–Mon · 11am – 9pm",
     highlight: "Plant-based comfort food with local produce",
+    displayName: "Vegan 15",
   },
   BobaKafe: {
     location: "Toms River",
     hours: "Daily · 11am – 11pm",
     highlight: "Artisan bubble tea and sweet bites",
+    displayName: "Boba Kafe",
   },
   HalalKitch: {
     location: "Toms River",
     hours: "Daily · 11am – 10pm",
     highlight: "Char-grilled halal classics and mezze",
+    displayName: "Halal Kitch",
   },
   LunchStreet: {
     location: "Toms River",
     hours: "Weekdays · 10am – 6pm",
     highlight: "Stacked sandwiches and smart lunch combos",
+    displayName: "Lunch Street",
   },
   WingsBowl: {
     location: "Toms River",
     hours: "Thu–Sun · 2pm – Midnight",
     highlight: "Loaded wings and gameday snacks",
+    displayName: "Wings Bowl",
   },
 };
 
@@ -73,6 +81,7 @@ type RestaurantEntry = {
   menu: Menu;
   meta: RestaurantMeta;
   image: string;
+  displayName: string;
 };
 
 const buildRestaurantEntries = (): RestaurantEntry[] => {
@@ -82,12 +91,14 @@ const buildRestaurantEntries = (): RestaurantEntry[] => {
       hours: "Daily · 10am – 10pm",
       highlight: "Chef specials crafted for any occasion",
     };
+    const displayName = meta.displayName ?? menu.restaurantName ?? key;
 
     return {
       key,
-      menu: menu as RestaurantMenu,
+      menu: menu as Menu,
       meta,
       image: restaurantImages[key] ?? kitchenHubLogo,
+      displayName,
     };
   });
 };
@@ -210,7 +221,7 @@ const OrderNowPopup = ({ onClose }: OrderNowPopupProps) => {
           <div className="mt-4 flex snap-x gap-2 overflow-x-auto pb-2" role="tablist" aria-label="Restaurants">
             {restaurantTabs.map((tabKey) => {
               const entry = restaurantEntries.find((r) => r.key === tabKey);
-              const label = tabKey === "All" ? "All Restaurants" : entry?.menu.restaurantName ?? tabKey;
+              const label = tabKey === "All" ? "All Restaurants" : entry?.displayName ?? tabKey;
 
               return (
                 <button
@@ -246,12 +257,12 @@ const OrderNowPopup = ({ onClose }: OrderNowPopupProps) => {
                 <div className="flex flex-col gap-4 rounded-2xl border border-border/70 bg-white/80 p-5 shadow-sm sm:flex-row sm:items-center">
                   <img
                     src={entry.image}
-                    alt={entry.menu.restaurantName}
+                    alt={entry.displayName}
                     className="h-20 w-20 rounded-2xl object-cover shadow-inner ring-2 ring-primary/30"
                   />
                   <div className="flex-1">
                     <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">Restaurant</p>
-                    <h3 className="font-display text-3xl text-secondary">{entry.menu.restaurantName}</h3>
+                    <h3 className="font-display text-3xl text-secondary">{entry.displayName}</h3>
                     <p className="text-sm text-muted-foreground">{entry.meta.highlight}</p>
                     <div className="mt-3 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-secondary">
                       <span className="inline-flex items-center gap-1 rounded-full bg-accent px-3 py-1">
@@ -270,7 +281,7 @@ const OrderNowPopup = ({ onClose }: OrderNowPopupProps) => {
                       setQuery("");
                     }}
                   >
-                    View {entry.menu.restaurantName}
+                    View {entry.displayName}
                   </Button>
                 </div>
 
