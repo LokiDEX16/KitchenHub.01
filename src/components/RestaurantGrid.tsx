@@ -1,7 +1,7 @@
 import { useState } from "react";
 import RestaurantCard from "@/components/RestaurantCard";
 import MenuPopup from "@/components/MenuPopup";
-import { menus } from "@/data/menus";
+import { menusWithImages, type Menu } from "@/data/menus";
 import indiyasImg from "@/assets/restaurant-indiyas.jpg";
 import dosaImg from "@/assets/restaurant-dosa.jpg";
 import veganImg from "@/assets/restaurant-vegan.jpg";
@@ -28,10 +28,10 @@ const tomsRiverRestaurants = [
 ];
 
 const RestaurantGrid = () => {
-  const [selectedMenu, setSelectedMenu] = useState(null);
+  const [selectedMenu, setSelectedMenu] = useState<Menu | null>(null);
 
   const openPopup = (restaurant) => {
-    setSelectedMenu(menus[restaurant.menuKey]);
+    setSelectedMenu(menusWithImages[restaurant.menuKey]);
   };
 
   const closePopup = () => {

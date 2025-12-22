@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { MapPin, Search, UtensilsCrossed, X } from "lucide-react";
 
-import { menus } from "@/data/menus";
+import { menusWithImages, type Menu } from "@/data/menus";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -13,24 +13,6 @@ import lunchImg from "@/assets/restaurant-lunch.jpg";
 import wingsImg from "@/assets/restaurant-wings.jpg";
 import indiyasImg from "@/assets/restaurant-indiyas.jpg";
 import kitchenHubLogo from "@/assets/kitchen-hub-logo.png";
-
-type MenuItem = {
-  name: string;
-  price: string;
-  description?: string;
-  image?: string;
-};
-
-type MenuCategory = {
-  name: string;
-  description?: string;
-  items: MenuItem[];
-};
-
-type RestaurantMenu = {
-  restaurantName: string;
-  categories: MenuCategory[];
-};
 
 type RestaurantMeta = {
   location: string;
@@ -88,13 +70,13 @@ const restaurantMeta: Record<string, RestaurantMeta> = {
 
 type RestaurantEntry = {
   key: string;
-  menu: RestaurantMenu;
+  menu: Menu;
   meta: RestaurantMeta;
   image: string;
 };
 
 const buildRestaurantEntries = (): RestaurantEntry[] => {
-  return Object.entries(menus).map(([key, menu]) => {
+  return Object.entries(menusWithImages).map(([key, menu]) => {
     const meta = restaurantMeta[key] ?? {
       location: "New Jersey",
       hours: "Daily · 10am – 10pm",
