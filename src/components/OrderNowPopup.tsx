@@ -294,10 +294,7 @@ const OrderNowPopup = ({ onClose }: OrderNowPopupProps) => {
                             key={`${entry.key}-${category.name}-${item.name}`}
                             className="flex flex-col rounded-2xl border border-border/60 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                           >
-                            {item.image && (
-                              <img src={item.image} alt={item.name} className="h-40 w-full rounded-t-2xl object-cover" />
-                            )}
-                            <div className="flex flex-1 flex-col p-4">
+                            <div className="flex flex-1 flex-col gap-3 p-4">
                               <div className="flex items-start justify-between gap-3">
                                 <div>
                                   <h5 className="text-lg font-semibold text-secondary">{item.name}</h5>
