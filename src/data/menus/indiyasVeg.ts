@@ -147,6 +147,59 @@ export const indiyasVegMenu = {
                 image: "src/assets/menu/indiyas/puri.png"
             }
         ]
+    },
+    {
+      name: "SNACKS",
+      items: [
+        {
+          name: "Sprouted Pumpkin Seeds Salted",
+          price: "$6.99",
+          description: "Vegan, gluten free, plant based, 4g protein.",
+          image: "src/assets/menu/snacks/Sprouted_pumpkin_seeds_salted.jpg",
+        },
+        {
+          name: "Organic Flax Crackers Italian Herbs",
+          price: "$6.99",
+          description: "No added sugar, vegan, gluten free, plant based.",
+          image: "src/assets/menu/snacks/Organic_flax_crackers_italian_herbs.jpg",
+        },
+        {
+          name: "Sprouted Cashews Coffee",
+          price: "$6.99",
+          description: "Vegan, gluten free, plant based, 3g protein.",
+          image: "src/assets/menu/snacks/Sprouted_Cashews_coffee.jpg",
+        },
+        {
+          name: "Nut & Seed Medley Cheese",
+          price: "$6.99",
+          description: "Sunflower, pumpkin seeds, cashews, almonds; plant based, 6g protein.",
+          image: "src/assets/menu/snacks/Nut_and_seed_medley_cheese.jpg",
+        },
+        {
+          name: "Nut & Seed Crackers Everything Bagel",
+          price: "$6.99",
+          description: "Everything bagel seasoned nut and seed crackers; plant based, 5g protein.",
+          image: "src/assets/menu/snacks/Nut_and_seed_crackers_everything_bagel.jpg",
+        },
+        {
+          name: "Nut & Seed Medley Everything Bagel",
+          price: "$6.99",
+          description: "Everything bagel nut and seed mix; plant based, 6g protein.",
+          image: "src/assets/menu/snacks/Nut_and_seed_medley_everything_bagel.jpg",
+        },
+        {
+          name: "Nut & Seed Medley Tomato Italian Herbs",
+          price: "$6.99",
+          description: "Tomato and Italian herb seasoned nut and seed medley; plant based, 5g protein.",
+          image: "src/assets/menu/snacks/Nut_and_seed_medley_tomato_italian_herbs.jpg",
+        },
+        {
+          name: "Nut & Seed Crackers Tomato Italian Herbs",
+          price: "$5.99",
+          description: "Tomato Italian herb nut and seed crackers; plant based, 4g protein.",
+          image: "src/assets/menu/snacks/Nut_and_seed_crackers_tomato_italian_herbs.jpg",
+        },
+      ],
     }
   ],
 };

@@ -78,24 +78,28 @@ const restaurantMeta: Record<string, RestaurantMeta> = {
 
 type RestaurantEntry = {
   key: string;
-  menu: Menu;
+  menu: Menu | null;
   meta: RestaurantMeta;
   image: string;
   displayName: string;
 };
 
 const buildRestaurantEntries = (): RestaurantEntry[] => {
-  return Object.entries(menusWithImages).map(([key, menu]) => {
+  // Get all restaurant keys from restaurantMeta
+  const allRestaurantKeys = Object.keys(restaurantMeta);
+  
+  return allRestaurantKeys.map((key) => {
+    const menu = menusWithImages[key] ?? null;
     const meta = restaurantMeta[key] ?? {
       location: "New Jersey",
       hours: "Daily · 10am – 10pm",
       highlight: "Chef specials crafted for any occasion",
     };
-    const displayName = meta.displayName ?? menu.restaurantName ?? key;
+    const displayName = meta.displayName ?? (menu?.restaurantName) ?? key;
 
     return {
       key,
-      menu: menu as Menu,
+      menu: menu as Menu | null,
       meta,
       image: restaurantImages[key] ?? kitchenHubLogo,
       displayName,
@@ -137,6 +141,11 @@ const OrderNowPopup = ({ onClose }: OrderNowPopupProps) => {
     return restaurantEntries
       .filter((entry) => activeRestaurant === "All" || entry.key === activeRestaurant)
       .map((entry) => {
+        // If no menu exists, return entry with empty categories
+        if (!entry.menu) {
+          return { ...entry, categories: [] };
+        }
+        
         const categories = entry.menu.categories
           .map((category) => {
             const items = category.items.filter((item) => {
@@ -149,8 +158,7 @@ const OrderNowPopup = ({ onClose }: OrderNowPopupProps) => {
           .filter((category) => category.items.length > 0);
 
         return { ...entry, categories };
-      })
-      .filter((entry) => entry.categories.length > 0);
+      });
   }, [restaurantEntries, activeRestaurant, normalizedQuery]);
 
   const totalItems = filteredRestaurants.reduce(
@@ -245,7 +253,7 @@ const OrderNowPopup = ({ onClose }: OrderNowPopupProps) => {
         </div>
 
         <div className="flex-1 overflow-y-auto px-5 py-6 sm:px-10">
-          {filteredRestaurants.length === 0 ? (
+          {filteredRestaurants.length === 0 && activeRestaurant !== "All" ? (
             <div className="flex h-full flex-col items-center justify-center gap-3 text-center text-secondary">
               <UtensilsCrossed className="h-12 w-12 text-primary" />
               <p className="text-lg font-semibold">No dishes match your search</p>
@@ -286,7 +294,16 @@ const OrderNowPopup = ({ onClose }: OrderNowPopupProps) => {
                 </div>
 
                 <div className="mt-8 space-y-10">
-                  {entry.categories.map((category) => (
+                  {!entry.menu || entry.categories.length === 0 ? (
+                    <div className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-border/60 bg-white/50 py-12 text-center">
+                      <UtensilsCrossed className="h-10 w-10 text-muted-foreground" />
+                      <div>
+                        <p className="text-lg font-semibold text-secondary">Menu Coming Soon</p>
+                        <p className="text-sm text-muted-foreground">We're currently updating our menu for this location.</p>
+                      </div>
+                    </div>
+                  ) : (
+                    entry.categories.map((category) => (
                     <div key={`${entry.key}-${category.name}`}>
                       <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
                         <div>
@@ -301,35 +318,30 @@ const OrderNowPopup = ({ onClose }: OrderNowPopupProps) => {
 
                       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
                         {category.items.map((item) => (
-                          <article
-                            key={`${entry.key}-${category.name}-${item.name}`}
-                            className="flex flex-col rounded-2xl border border-border/60 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-                          >
-                            <div className="flex flex-1 flex-col gap-3 p-4">
-                              <div className="flex items-start justify-between gap-3">
-                                <div>
-                                  <h5 className="text-lg font-semibold text-secondary">{item.name}</h5>
-                                  {item.description && <p className="text-sm text-muted-foreground">{item.description}</p>}
+                            <article
+                              key={`${entry.key}-${category.name}-${item.name}`}
+                              className="flex flex-col rounded-2xl border border-border/60 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                            >
+                              {item.image && (
+                                <div className="flex h-40 w-full items-center justify-center rounded-t-2xl bg-white ring-1 ring-border/60">
+                                  <img src={item.image} alt={item.name} className="max-h-full max-w-full object-contain" />
                                 </div>
-                                <span className="text-sm font-bold text-primary">{item.price}</span>
+                              )}
+                              <div className="flex flex-1 flex-col gap-3 p-4">
+                                <div className="flex items-start justify-between gap-3">
+                                  <div>
+                                    <h5 className="text-lg font-semibold text-secondary">{item.name}</h5>
+                                    {item.description && <p className="text-sm text-muted-foreground">{item.description}</p>}
+                                  </div>
+                                  <span className="text-sm font-bold text-primary">{item.price}</span>
+                                </div>
                               </div>
-                              <Button
-                                variant="outline"
-                                size="sm"
-                                className="mt-4 w-full border-dashed text-primary hover:bg-primary/10"
-                                onClick={() => {
-                                  setActiveRestaurant(entry.key);
-                                  setQuery(item.name);
-                                }}
-                              >
-                                Highlight dish
-                              </Button>
-                            </div>
-                          </article>
+                            </article>
                         ))}
                       </div>
                     </div>
-                  ))}
+                  ))
+                  )}
                 </div>
               </div>
             ))
