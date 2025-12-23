@@ -1,16 +1,22 @@
 import { Button } from "@/components/ui/button";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
+import snack1 from "@/assets/menu/snacks/Nut_and_seed_crackers_everything_bagel.jpg";
+import snack2 from "@/assets/menu/snacks/Nut_and_seed_crackers_tomato_italian_herbs.jpg";
+import snack3 from "@/assets/menu/snacks/Nut_and_seed_medley_cheese.jpg";
+import snack4 from "@/assets/menu/snacks/Nut_and_seed_medley_everything_bagel.jpg";
+import snack5 from "@/assets/menu/snacks/Nut_and_seed_medley_tomato_italian_herbs.jpg";
+import snack6 from "@/assets/menu/snacks/Organic_flax_crackers_italian_herbs.jpg";
+import snack7 from "@/assets/menu/snacks/Sprouted_Cashews_coffee.jpg";
+import snack8 from "@/assets/menu/snacks/Sprouted_pumpkin_seeds_salted.jpg";
 
 const galleryImages = [
-  { src: gallery1, alt: "Loaded nachos" },
-  { src: gallery2, alt: "Fresh sushi platter" },
-  { src: gallery3, alt: "Gourmet burger" },
-  { src: gallery4, alt: "Acai bowl" },
-  { src: gallery5, alt: "Pasta carbonara" },
+  { src: snack1, alt: "Nut and Seed Crackers - Everything Bagel" },
+  { src: snack2, alt: "Nut and Seed Crackers - Tomato Italian Herbs" },
+  { src: snack3, alt: "Nut and Seed Medley - Cheese" },
+  { src: snack4, alt: "Nut and Seed Medley - Everything Bagel" },
+  { src: snack5, alt: "Nut and Seed Medley - Tomato Italian Herbs" },
+  { src: snack6, alt: "Organic Flax Crackers - Italian Herbs" },
+  { src: snack7, alt: "Sprouted Cashews - Coffee" },
+  { src: snack8, alt: "Sprouted Pumpkin Seeds - Salted" },
 ];
 
 const GallerySection = () => {
@@ -19,12 +25,12 @@ const GallerySection = () => {
       <div className="container-custom px-4 mb-12">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
           <div>
-            <p className="text-primary font-semibold uppercase tracking-widest mb-2">Food Gallery</p>
+            <p className="text-primary font-semibold uppercase tracking-widest mb-2">Snack Gallery</p>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl">
-              WE DELIVER
+              HEALTHY SNACKS
             </h2>
             <p className="text-muted-foreground mt-2 max-w-md">
-              Satisfying your cravings just got easier. Browse our mouthwatering selection.
+              Discover our selection of organic, nutritious snacks perfect for any time of day.
             </p>
           </div>
           <Button variant="hero" size="lg">

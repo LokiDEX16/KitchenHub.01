@@ -29,9 +29,6 @@ export const menus: MenuMap = {
   Vegan15: vegan15Menu,
   Dosa24: dosa24Menu,
   BobaKafe: bobaKafeMenu,
-  HalalKitch: indiyasVegMenu, // Placeholder
-  WingsBowl: vegan15Menu, // Placeholder
-  LunchStreet: dosa24Menu, // Placeholder
 };
 
 const resolveMenuAssets = (menu: Menu): Menu => ({
