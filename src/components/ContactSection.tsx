@@ -104,7 +104,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="font-display text-xl mb-2">ATLANTIC CITY, NJ</h3>
-                <p className="text-muted-foreground">123 Boardwalk Avenue</p>
+                <p className="text-muted-foreground">1100 Pacific Ave</p>
                 <p className="text-muted-foreground">Atlantic City, NJ 08401</p>
               </div>
             </div>
@@ -116,7 +116,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="font-display text-xl mb-2">TOMS RIVER, NJ</h3>
-                <p className="text-muted-foreground">456 Main Street</p>
+                <p className="text-muted-foreground">49 Main Street</p>
                 <p className="text-muted-foreground">Toms River, NJ 08753</p>
               </div>
             </div>

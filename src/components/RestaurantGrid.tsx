@@ -48,7 +48,7 @@ const RestaurantGrid = () => {
             <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl text-secondary">
               ATLANTIC CITY, NJ
             </h2>
-            <p className="text-muted-foreground mt-4">123 Boardwalk Avenue</p>
+            <p className="text-muted-foreground mt-4">1100 Pacific Ave</p>
             <p className="text-muted-foreground">Atlantic City, NJ 08401</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -72,7 +72,7 @@ const RestaurantGrid = () => {
             <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl text-secondary">
               TOMS RIVER, NJ
             </h2>
-            <p className="text-muted-foreground mt-4">456 Main Street</p>
+            <p className="text-muted-foreground mt-4">49 Main Street</p>
             <p className="text-muted-foreground">Toms River, NJ 08753</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
