@@ -129,7 +129,7 @@ const ContactSection = () => {
               <div>
                 <h3 className="font-display text-xl mb-2">CALL US</h3>
                 <p className="text-muted-foreground">(555) 123-4567</p>
-                <p className="text-muted-foreground">support@kitchenhub.com</p>
+                <p className="text-muted-foreground">support@kitchenhubusa.com</p>
               </div>
             </div>
           </div>
