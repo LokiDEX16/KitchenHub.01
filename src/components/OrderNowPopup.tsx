@@ -318,25 +318,25 @@ const OrderNowPopup = ({ onClose }: OrderNowPopupProps) => {
 
                       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
                         {category.items.map((item) => (
-                            <article
-                              key={`${entry.key}-${category.name}-${item.name}`}
-                              className="flex flex-col rounded-2xl border border-border/60 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-                            >
-                              {item.image && (
-                                <div className="flex h-40 w-full items-center justify-center rounded-t-2xl bg-white ring-1 ring-border/60">
-                                  <img src={item.image} alt={item.name} className="max-h-full max-w-full object-contain" />
-                                </div>
-                              )}
-                              <div className="flex flex-1 flex-col gap-3 p-4">
-                                <div className="flex items-start justify-between gap-3">
-                                  <div>
-                                    <h5 className="text-lg font-semibold text-secondary">{item.name}</h5>
-                                    {item.description && <p className="text-sm text-muted-foreground">{item.description}</p>}
-                                  </div>
-                                  <span className="text-sm font-bold text-primary">{item.price}</span>
-                                </div>
+                          <article
+                            key={`${entry.key}-${category.name}-${item.name}`}
+                            className="flex flex-row rounded-2xl border border-border/60 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:flex-col"
+                          >
+                            {item.image && (
+                              <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-l-2xl bg-white ring-1 ring-border/60 sm:h-40 sm:w-full sm:rounded-l-none sm:rounded-t-2xl">
+                                <img src={item.image} alt={item.name} className="max-h-full max-w-full object-contain" />
                               </div>
-                            </article>
+                            )}
+                            <div className="flex flex-1 flex-col gap-3 p-4">
+                              <div className="flex items-start justify-between gap-3">
+                                <div>
+                                  <h5 className="text-lg font-semibold text-secondary">{item.name}</h5>
+                                  {item.description && <p className="text-sm text-muted-foreground">{item.description}</p>}
+                                </div>
+                                <span className="text-sm font-bold text-primary">{item.price}</span>
+                              </div>
+                            </div>
+                          </article>
                         ))}
                       </div>
                     </div>
